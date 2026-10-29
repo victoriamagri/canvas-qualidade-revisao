@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canvas de Qualidade — atualização</title>
+<style>
+:root{--azul:#0055FF;--navy:#080E32;--coral:#FC6058;--borda:#dde3f0;--fundo:#f5f7fb}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--fundo);color:var(--navy);margin:0;padding:24px 16px;line-height:1.5}
+main{max-width:960px;margin:0 auto}
+h1{font-size:26px;margin:0 0 4px}
+.sub{color:#4a5272;margin:0 0 20px}
+.status{background:#fff4f2;border:1px solid var(--coral);border-radius:10px;padding:14px 16px;margin-bottom:20px}
+.resumo{background:#fff;border:1px solid var(--borda);border-radius:10px;padding:14px 16px;margin-bottom:20px}
+section{background:#fff;border:1px solid var(--borda);border-radius:10px;padding:16px 20px;margin:16px 0}
+.head{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.head h2{font-size:18px;margin:0;flex:1}
+.tag{background:#e8efff;color:var(--azul);border-radius:999px;padding:2px 10px;font-size:13px;font-weight:600}
+.links{margin:6px 0 10px}a{color:var(--azul)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--borda);padding:8px;text-align:left;vertical-align:top}
+th{background:#f0f3fa} td:first-child{color:#6b7290;width:42%}
+details{margin-top:12px} summary{cursor:pointer;font-weight:600;color:var(--azul)}
+.how{color:var(--coral);font-weight:600}
+button{background:var(--azul);color:#fff;border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+.c{border-top:1px solid #eee;margin-top:10px;overflow-wrap:anywhere}
+</style></head><body><main>
+<h1>Canvas de Qualidade e Fiscalização — atualização</h1>
+<p class="sub">Revisão de 29/10/2026 · Qualidade e Fiscalização · Victoria Magri</p>
+<div class="status"><b>Situação:</b> os textos estão prontos, mas ainda <b>não foram aplicados no Slack</b>. A integração usada não tem permissão para editar canvas, então cada canvas é atualizado colando o texto novo (botão "Copiar texto" em cada bloco).</div>
+<div class="resumo"><b>O que motivou:</b> pedido da gestão (09/10) para alinhar a documentação dos processos às ferramentas em uso. Principais mudanças: o Sults saiu e o chamado passou para a Central de Atividades; a régua v1 deu lugar à v2; caíram o réu primário, a coluna Aguardando Evidência e o terceiro contato. O canvas de <b>Multas</b> já foi reescrito pela Diretoria em 28/10 conforme o MGO e não entrou nesta revisão.</div>
+
+<section>
+  <div class="head"><h2>1. Processo de Ocorrências — Qualidade e Fiscalização</h2><span class="tag">Reescrita completa</span></div>
+  <p class="links"><a href="https://seazone-fund.slack.com/docs/TDLTVAWQ6/F086ZDXQJNL" target="_blank">Abrir canvas no Slack</a></p>
+  <div class="scroll"><table><thead><tr><th>Antes</th><th>Depois</th></tr></thead><tbody><tr><td>Comunicação com a franquia pelo Sults, com passo a passo e prints</td><td>Chamado na Central de Atividades do Sapron, aberto pelo botão &quot;Abrir na Central de Atividades&quot; (individual ou em lote), com prazo de 48h e status &quot;Aguardando&quot;</td></tr><tr><td>Kanban de 10 colunas, com &quot;Aguardando Evidência&quot;</td><td>Kanban de 9 colunas, igual ao app; &quot;Aguardando Evidência&quot; descontinuada</td></tr><tr><td>Regra de réu primário (12 meses)</td><td>Removida. &quot;Ocorrência Sem Pontuação&quot; passa a ser: franquia com menos de 5 imóveis ativos sem reservas, multa direta ou qualquer caso que não será pontuado</td></tr><tr><td>Cadência de 3 contatos</td><td>Mensagem inicial → uma cobrança (Segundo Contato) → aplica a ocorrência</td></tr><tr><td>Tabela da régua v1 (1.1 a 3.10, 26 códigos)</td><td>Resumo da régua v2: eixos, 10 categorias, reincidência, teto mensal, multa direta e somente registro. Tabela completa: aba Regras da Central e MGO</td></tr><tr><td>Fórmula de pontos das visitas de consultores</td><td>Um card por imóvel em Nova Ocorrência, na subcategoria de maior gravidade, com as fotos na descrição</td></tr><tr><td>Danos: 14 dias</td><td>14 dias a partir do checkout, considerando o tempo hábil do setor de Danos</td></tr><tr><td>Origens: manual, Caça IA, APIs (Zapier/n8n/Make), Metabase</td><td>Manual, integrações automáticas (Danos, Despesas, Implantação, Manutenção, Treinamento, Realocação, Atendimento, Churn), vistorias e Caça às Ocorrências</td></tr></tbody></table></div>
+  <details><summary>Texto novo para colar</summary>
+    <p class="how">Substituir todo o conteúdo abaixo do título.</p>
+    <button onclick="cp('c0')">Copiar texto</button>
+    <div class="c" id="c0"><p>:pushpin: <b>Fonte da regra:</b> MGO — Política de Descumprimento e tabela Categorias de Ocorrências Gerais (Franqueado 360). Se algo aqui divergir do MGO, vale o MGO. A régua em uso no sistema é a <b>v2</b> (aba Regras da Central).</p>
+<h3>:pushpin: 1. Identificação do Processo</h3>
+<ul>
+<li><b>Nome:</b> Processo de Ocorrências — Qualidade e Fiscalização</li>
+<li><b>Área:</b> Backoffice › Qualidade e Fiscalização</li>
+<li><b>Responsável:</b> <b>@Victoria Magri</b></li>
+<li><b>Gestão:</b> <b>@Rayanne Oliveira</b></li>
+<li><b>Validação de má-fé (10.7):</b> Diretoria de Franquias <b>@Diretoria de Franquias</b></li>
+<li><b>Sistema:</b> Central de Qualidade (Ocorrências e Multas) — <a href="https://centraldeocorrenciasemultas.lovable.app/adm/funil-ocorrencias" target="_blank">https://centraldeocorrenciasemultas.lovable.app/adm/funil-ocorrencias</a></li>
+<li><b>Comunicação com a franquia:</b> chamado na Central de Atividades do Sapron (o Sults não é mais usado neste processo).</li>
+</ul>
+<h3>:dart: 2. Objetivo</h3>
+<p>Padronizar a identificação, a comunicação e a pontuação de descumprimentos das franquias, preservando a experiência do hóspede, a marca e a conformidade da rede. Resultado esperado: régua única e transparente, decisões rastreáveis e iguais entre franquias, menos reincidência e base sólida para a multa quando ela acontecer.</p>
+<h3>:memo: 3. Escopo</h3>
+<p><b>Incluso</b></p>
+<ul>
+<li>Entrada de ocorrências (registro manual, integrações automáticas, vistorias e Caça às Ocorrências)</li>
+<li>Triagem e classificação pela régua v2</li>
+<li>Abertura de chamado na Central de Atividades e cobrança de justificativa/evidência</li>
+<li>Decisão: pontuar, registrar sem pontuar ou encerrar por justificativa válida</li>
+<li>Histórico das ocorrências por franquia</li>
+</ul>
+<p><b>Fora do escopo</b></p>
+<ul>
+<li>Cálculo, aprovação e desconto da multa → Processo de Multas — Qualidade e Fiscalização</li>
+<li>Negociação ou isenção de pontuação</li>
+<li>Tratativas comerciais com franquias</li>
+</ul>
+<p><b>Interfaces</b></p>
+<ul>
+<li>Processo de Multas (as ocorrências pontuadas alimentam o acúmulo de 90 dias)</li>
+<li>Cadeia de Comunicação — Qualidade e Fiscalização (templates de cada etapa)</li>
+<li>Central de Atividades do Sapron (chamado com a franquia)</li>
+<li>Sapron (danos e despesas) · Implantação · Manutenção · Atendimento ao Hóspede · Comentários · Gestão Regional</li>
+</ul>
+<h3>:busts_in_silhouette: 4. Responsáveis e Papéis</h3>
+<p><b>Qualidade e Fiscalização — gestão</b></p>
+<ul>
+<li>Regras e critérios, indicadores e evolução do processo</li>
+</ul>
+<p><b>Qualidade e Fiscalização — analista</b></p>
+<ul>
+<li>Triagem dos cards e classificação pela régua v2</li>
+<li>Abertura dos chamados na Central de Atividades e cobrança</li>
+<li>Análise de justificativas e evidências</li>
+<li>Decisão da coluna final e comunicação à franquia</li>
+</ul>
+<p><b>Diretoria de Franquias</b></p>
+<ul>
+<li>Definição de critérios</li>
+<li>Validação obrigatória de má-fé no descumprimento de processo (10.7)</li>
+</ul>
+<h3>:arrows_counterclockwise: 5. Fluxo do Processo (Kanban)</h3>
+<p>O Kanban tem 9 colunas: Nova Ocorrência → Reclamações Passíveis de Ocorrências → Primeiro Contato → Segundo Contato → Ocorrência Sem Pontuação · Ocorrência Com Pontuação · Justificativa Válida → Finalizados · Excluídos.</p>
+<p><b>1 — Nova Ocorrência</b></p>
+<ul>
+<li>Responsável: sistema / analista</li>
+<li>Os cards chegam por: registro manual no funil; integrações automáticas (Danos, Despesas, Implantação, Manutenção, Treinamento, Realocação/Cancelamento, Atendimento ao Hóspede/check-in, Análise de Churn); vistorias da Gestão Regional; Caça às Ocorrências.</li>
+<li>O card traz franquia, código do imóvel (ou "NÃO RELACIONADO AO IMÓVEL"), origem, descrição, evidência e a subcategoria sugerida.</li>
+</ul>
+<p><b>2 — Reclamações Passíveis de Ocorrências (triagem)</b></p>
+<ul>
+<li>Responsável: analista</li>
+<li>Avaliar se o caso tem mérito (ver critérios na seção 8), confirmar a subcategoria da régua v2 e conferir a mensagem sugerida do chamado.</li>
+<li>O que não tem mérito vai para <b>Excluídos</b>, com justificativa.</li>
+</ul>
+<p><b>3 — Primeiro Contato</b></p>
+<ul>
+<li>Responsável: analista</li>
+<li>Botão <b>Abrir na Central de Atividades</b> (no card, no detalhe ou <b>Abrir chamados em lote</b> por origem). O sistema cria o chamado no Sapron com a mensagem e as evidências, coloca o chamado em "Aguardando" com prazo de 48h, grava o link no card e move o card para Primeiro Contato.</li>
+<li>Implantação e Atendimento ao Hóspede <b>não</b> levam links de evidência na mensagem: a evidência dessas origens é só para a gestão.</li>
+<li>A franquia responde no próprio chamado da Central de Atividades.</li>
+</ul>
+<p><b>4 — Segundo Contato</b></p>
+<ul>
+<li>Responsável: analista</li>
+<li>Usado quando a franquia não respondeu no prazo ou respondeu sem justificativa/evidência suficiente: o analista envia <b>uma</b> cobrança (template na Cadeia de Comunicação).</li>
+<li>Sem resposta válida depois da cobrança, a ocorrência é aplicada. Não existe terceiro contato.</li>
+</ul>
+<p><b>5 — Decisão (três saídas)</b></p>
+<ul>
+<li><b>Ocorrência Com Pontuação:</b> a ocorrência vale e pontua. Entra no Score e, se for do eixo Hóspede &amp; Imóvel, no acúmulo de multa.</li>
+<li><b>Ocorrência Sem Pontuação:</b> a ocorrência é formalizada e fica no histórico, mas a franquia não é pontuada. Vale para: franquias pequenas (menos de 5 imóveis ativos, como no Processo de Multas) que ainda não receberam reservas; ocorrências que geram multa direta (não pontuam, viram multa); qualquer outro caso em que a franquia não será pontuada.</li>
+<li><b>Justificativa Válida:</b> a franquia trouxe justificativa procedente. Encerra sem ocorrência e fica no histórico (base do índice de contorno).</li>
+</ul>
+<p><b>6 — Finalizados / Excluídos</b></p>
+<ul>
+<li><b>Finalizados:</b> card concluído depois da decisão.</li>
+<li><b>Excluídos:</b> card sem mérito, duplicado ou aberto por engano (sempre com justificativa).</li>
+</ul>
+<p>ℹ️ A coluna <b>Aguardando Evidência</b> e a regra de <b>réu primário</b> foram descontinuadas e não fazem mais parte do processo.</p>
+<h3>:key: 6. Ferramentas e documentos</h3>
+<ul>
+<li><b>Central de Qualidade (Lovable):</b> Kanban de Ocorrências, Dashboard, Monitoramento, Regras (régua v2), Histórico, Multas, Caça às Ocorrências e Elogios</li>
+<li><b>Central de Atividades do Sapron:</b> chamado com a franquia — <a href="https://sapron.com.br/central-atividades/ocorrencia" target="_blank">https://sapron.com.br/central-atividades/ocorrencia</a></li>
+<li><b>Sapron:</b> lançamento de danos e despesas</li>
+<li><b>MGO</b> — Política de Descumprimento e tabela de ocorrências</li>
+<li><b>Cadeia de Comunicação — Qualidade e Fiscalização:</b> templates de cada etapa</li>
+<li><b>Processo de Multas — Qualidade e Fiscalização</b></li>
+</ul>
+<h3>:hourglass_flowing_sand: 7. Prazos</h3>
+<ul>
+<li><b>Resposta da franquia ao chamado:</b> 24h (o chamado é aberto com prazo de 48h na Central de Atividades)</li>
+<li><b>Cadência:</b> mensagem inicial → uma cobrança (Segundo Contato) → sem resposta válida, aplica a ocorrência</li>
+<li><b>Lançamento de dano:</b> 14 dias a partir do checkout do hóspede, considerando o tempo hábil para os processos do setor de Danos</li>
+<li><b>Validade da ocorrência para multa:</b> 90 dias a partir da comunicação oficial à franquia (regra completa no Processo de Multas)</li>
+</ul>
+<h3>:white_check_mark: 8. Critérios de triagem</h3>
+<p><b>Vira chamado</b></p>
+<ul>
+<li>Comentário de hóspede que aponta manutenção a fazer ou problema não resolvido</li>
+<li>Problema de comunicação da franquia com hóspede ou proprietário</li>
+<li>Reclamação interna da Seazone com interface direta com a franquia (manutenção, danos, despesas, implantação)</li>
+<li>Qualquer caso que se enquadre em subcategoria grave ou gravíssima da régua v2</li>
+</ul>
+<p><b>Não segue adiante</b></p>
+<ul>
+<li>Reclamação sobre a taxa PET</li>
+<li>Comentário sem detalhe sobre o problema</li>
+<li>Reclamação sem sentido sobre o anúncio</li>
+<li>Implantação já concluída</li>
+<li>Dano que não consta mais no Sapron</li>
+<li>Reembolso ou processo da Seazone reclamado pelo hóspede</li>
+<li>Ponto fora da alçada da franquia (portaria, proprietário, condomínio)</li>
+</ul>
+<p><b>Justificativa válida</b></p>
+<ul>
+<li>Emergência pessoal (saúde, questão familiar urgente, acidente)</li>
+<li>Atraso por fator externo (greve, falta de energia, desastre natural)</li>
+<li>Culpa da Seazone, do prédio ou fora da alçada da franquia</li>
+<li>Franquia comprova que resolveu o problema</li>
+</ul>
+<p>⚠️ Fora casos sensíveis e extremos, é <b>obrigatória prova visual</b>: foto/vídeo do imóvel, print de WhatsApp, nota fiscal, foto do item lançado como despesa.</p>
+<h3>:straight_ruler: 9. Régua de ocorrências (v2)</h3>
+<p>A tabela completa (código, descrição, gravidade, pontos e eixo) está na <b>aba Regras da Central</b> e no MGO. Resumo:</p>
+<p><b>Gravidade e pontos:</b> Base 0 · Leve 1 · Média 2 · Grave 4 · Gravíssima = multa direta (não pontua, não entra no acúmulo).</p>
+<p><b>Dois eixos</b></p>
+<ul>
+<li><b>Hóspede &amp; Imóvel</b> — pontua no Score e entra no acúmulo de multa.</li>
+<li><b>Conformidade</b> — pontua no Score (pode acionar o Stop de Crescimento), mas não gera multa por acúmulo.</li>
+</ul>
+<p><b>Categorias</b></p>
+<ul>
+<li>2 · Implantação (conformidade)</li>
+<li>3 · Reservas &amp; Experiência do Hóspede</li>
+<li>4 · Check-in &amp; Check-out</li>
+<li>5 · Limpeza &amp; Conservação</li>
+<li>6 · Manutenção</li>
+<li>7 · Danos</li>
+<li>8 · Despesas (conformidade)</li>
+<li>9 · Financeiro (conformidade)</li>
+<li>10 · Rede — Governança &amp; Processo (conformidade)</li>
+<li>11 · Marca &amp; Conduta</li>
+</ul>
+<p><b>Regras transversais</b></p>
+<ul>
+<li><b>Reincidência:</b> a mesma subcategoria repetida na janela de 90 dias sobe um nível de gravidade, até Grave (nunca vira Gravíssima).</li>
+<li><b>Teto mensal:</b> 10.2 (não responder na Central de Atividades) e 10.8 (não operar pelo Seazone Host) contam no máximo 1 vez por franquia por mês.</li>
+<li><b>Agrupamento:</b> problemas da mesma franquia, subcategoria, imóvel e mês viram um card só.</li>
+<li><b>Multa direta:</b> 3.4, 9.3, 10.3, 10.4, 10.5, 10.7, 11.4 a 11.9 e 11.11 — ficam no histórico e seguem para o Processo de Multas.</li>
+<li><b>Somente registro:</b> 11.2 e 11.12 — registram e não pontuam.</li>
+</ul>
+<h3>:mag: 10. Visitas de consultores</h3>
+<p>Durante a visita presencial, o consultor preenche um formulário de perguntas conforme/não conforme. As respostas negativas chegam ao Kanban em <b>Nova Ocorrência</b>, agrupadas em <b>um card por imóvel</b>, classificado pela subcategoria de maior gravidade entre os problemas encontrados (ex.: limpeza 5.1, identidade visual 11.1, manutenção 6.1). As fotos de evidência ficam listadas na descrição do card.</p>
+<h3>:bar_chart: 11. Indicadores</h3>
+<p>Os indicadores diários são lançados no kpi-system (setor 10 — Franquias · Qualidade e Fiscalização) a partir do painel Qualidade &amp; Fiscalização da Central. Principais:</p>
+<ul>
+<li>Ocorrências registradas no mês (por mês de aplicação)</li>
+<li>Franquias com mais ocorrências e recorrência por tipo</li>
+<li>Franquias em iminência de multa (faltam 4 pontos ou menos)</li>
+<li>Índice de contorno (justificativas válidas ÷ total)</li>
+</ul>
+<p>Página atualizada por <b>@Victoria Magri</b> em 29/10/2026</p></div>
+  </details>
+</section>
+<section>
+  <div class="head"><h2>2. Cadeia de Comunicação — Qualidade e Fiscalização</h2><span class="tag">Trocas pontuais</span></div>
+  <p class="links"><a href="https://seazone-fund.slack.com/docs/TDLTVAWQ6/F0B68QLFSF4" target="_blank">Abrir canvas no Slack</a></p>
+  <div class="scroll"><table><thead><tr><th>Antes</th><th>Depois</th></tr></thead><tbody><tr><td>&quot;via Sults&quot; (2 trechos)</td><td>Central de Atividades</td></tr><tr><td>Link central-qualidadeefiscalizacao.lovable.app (dá 404)</td><td>centraldeocorrenciasemultas.lovable.app</td></tr><tr><td>3 mensagens de cobrança (24h, 48h, sem evidências)</td><td>Uma cobrança só; não existe terceiro contato</td></tr><tr><td>&quot;R$ 2.500,00 (duzentos e cinquenta reais)&quot;</td><td>&quot;R$ 2.500,00 (dois mil e quinhentos reais)&quot;</td></tr><tr><td>Janela de apuração de 3 meses</td><td>90 dias</td></tr><tr><td>Templates de check-in, manutenção e lembrete afirmando a falha antes da defesa</td><td>Ajuste leve de tom, seguindo a auditoria da Ray de 02/10: abrem perguntando, sem sentença prévia</td></tr></tbody></table></div>
+  <details><summary>Texto novo para colar</summary>
+    <p class="how">Procurar cada trecho no canvas e trocar. O resto fica igual.</p>
+    <button onclick="cp('c1')">Copiar texto</button>
+    <div class="c" id="c1"><p>Trocas pontuais. Procure o texto da esquerda (Ctrl+F no canvas) e substitua pelo da direita. O resto do canvas fica igual.</p>
+<h4>Seção 4 — Responsáveis</h4>
+<ul>
+<li><b>Trocar:</b> Registro de todas as comunicações via Sults</li>
+<li><b>Por:</b> Registro de todas as comunicações na Central de Atividades</li>
+</ul>
+<h4>Template "Reclamação de Hóspede por comentário"</h4>
+<ul>
+<li><b>Trocar:</b> No seu retorno, por favor, indique se o relato é verídico ou apresente provas do contrário, incluindo o que for pertinente:</li>
+<li><b>Por:</b> Esses são os apontamentos do hóspede e ainda não concluímos nada. No seu retorno, conte o que aconteceu do seu lado — se o relato procede ou não — e envie o que for pertinente:</li>
+</ul>
+<h4>Template "Reclamação de Hóspede por atraso no checkin"</h4>
+<ul>
+<li><b>Trocar:</b> Uma falha operacional foi identificada no processo de check-in referente à reserva {{número da reserva}}, para o imóvel {{código do imóvel}}. A ocorrência, reportada em {{data}}, foi motivada pela ausência de alinhamento adequado do check-in com o hóspede {{nome do hóspede}}, cujo check-in estava previsto para a mesma data.</li>
+<li><b>Por:</b> Recebemos uma reclamação do hóspede {{nome do hóspede}} sobre o check-in da reserva {{número da reserva}}, no imóvel {{código do imóvel}}, previsto para {{data}}. Antes de registrar qualquer coisa, precisamos entender o que aconteceu do seu lado.</li>
+</ul>
+<h4>Template "Reclamação Seazone (Manutenção)"</h4>
+<ul>
+<li><b>Trocar:</b> Estamos entrando em contato para relatar uma inconformidade identificada no fluxo de comunicação referente à Manutenção e que gerará ocorrência.</li>
+<li><b>Por:</b> Estamos entrando em contato sobre o fluxo de comunicação da Manutenção: identificamos um chamado sem resposta e, antes de registrar uma ocorrência, queremos entender o que aconteceu.</li>
+</ul>
+<h4>Etapa 2 — Cobrança de Resposta (descrição)</h4>
+<ul>
+<li><b>Trocar:</b> Quando o franqueado não responde em 24h ou responde sem evidências suficientes, o time aciona as mensagens de cobrança em sequência (24h, 48h, sem evidências).</li>
+<li><b>Por:</b> Quando o franqueado não responde em 24h ou responde sem evidências suficientes, o time envia <b>uma</b> cobrança: o Lembrete (se não respondeu) ou a Ausência de Evidências (se respondeu sem evidência válida). Sem retorno válido depois dela, o caso é convertido em aviso formal. Não existe terceiro contato.</li>
+</ul>
+<h4>Template "Lembrete (após 24h sem retorno)"</h4>
+<ul>
+<li><b>Trocar:</b> Ressaltamos que a ausência de uma justificativa plausível, adequada e esclarecedora poderá resultar em um aviso formal.</li>
+<li><b>Por:</b> Sem uma justificativa com evidências, o caso será convertido em aviso formal.</li>
+<li><b>Trocar:</b> Aguardo seu retorno via Sults.</li>
+<li><b>Por:</b> Aguardo seu retorno pela Central de Atividades.</li>
+</ul>
+<h4>Comunicado "Aplicação de multa (falta em evento anual)"</h4>
+<ul>
+<li><b>Trocar:</b> R$ 2.500,00 (duzentos e cinquenta reais)</li>
+<li><b>Por:</b> R$ 2.500,00 (dois mil e quinhentos reais)</li>
+</ul>
+<h4>Seção 6 — Ferramentas</h4>
+<ul>
+<li><b>Trocar:</b> <a href="https://central-qualidadeefiscalizacao.lovable.app" target="_blank">https://central-qualidadeefiscalizacao.lovable.app</a></li>
+<li><b>Por:</b> <a href="https://centraldeocorrenciasemultas.lovable.app/adm/funil-ocorrencias" target="_blank">https://centraldeocorrenciasemultas.lovable.app/adm/funil-ocorrencias</a></li>
+</ul>
+<h4>Seção 7 — Prazos e SLA</h4>
+<ul>
+<li><b>Trocar</b> os 4 itens "Sequência de cobranças / Mensagem 01 / Mensagem 02 / Mensagem 03"</li>
+<li><b>Por:</b></li>
+<ul>
+<li>Cadência: mensagem inicial → uma cobrança → conversão em aviso formal</li>
+<li>Cobrança — Lembrete: após 24h sem resposta</li>
+<li>Cobrança — Ausência de evidências: quando o franqueado respondeu sem evidência válida (mais 24h)</li>
+</ul>
+<li><b>Trocar:</b> Período de apuração para critério de multa: 3 meses (janela deslizante)</li>
+<li><b>Por:</b> Janela de apuração para critério de multa: 90 dias (regra no Processo de Multas)</li>
+</ul>
+<h4>Rodapé</h4>
+<ul>
+<li><b>Trocar:</b> em 28 de setembro</li>
+<li><b>Por:</b> em 29 de outubro</li>
+</ul></div>
+  </details>
+</section>
+<section>
+  <div class="head"><h2>3. Processo de Caça às ocorrências</h2><span class="tag">Reescrita completa</span></div>
+  <p class="links"><a href="https://seazone-fund.slack.com/docs/TDLTVAWQ6/F086ZK5VB9N" target="_blank">Abrir canvas no Slack</a></p>
+  <div class="scroll"><table><thead><tr><th>Antes</th><th>Depois</th></tr></thead><tbody><tr><td>Página da Central que varre 5 canais do Slack</td><td>Varredura com o Claude (/caca-ocorrencias): suportes do CS Prop no Suporte Unificado e #respostas-reclame-aqui</td></tr><tr><td>Sem cruzamento</td><td>Cruza com a Central (120 dias) e com a Central de Atividades do Sapron antes de sugerir</td></tr><tr><td>Analista decide card a card</td><td>Lista em forte / dúvida / não abrir; só abre em Nova Ocorrência depois da aprovação</td></tr></tbody></table></div>
+  <details><summary>Texto novo para colar</summary>
+    <p class="how">Substituir todo o conteúdo abaixo do título.</p>
+    <button onclick="cp('c2')">Copiar texto</button>
+    <div class="c" id="c2"><h3>:mag: O que é</h3>
+<p>A Caça às Ocorrências busca falhas de franquia que apareceram em algum canal, mas <b>não viraram ocorrência</b>. Não substitui as automações: o que já entra sozinho na Central (vistoria, implantação, comentários, churn, realocação) só aparece na caça se a automação falhou.</p>
+<p>A varredura é feita pela analista de Qualidade com o Claude (comando <b>/caca-ocorrencias</b>), sob demanda. A janela vai da última rodada até hoje, ou a partir de uma data informada.</p>
+<h3>:books: Fontes lidas</h3>
+<p><b>1. Suporte Unificado — CS Proprietários (fonte principal)</b></p>
+<ul>
+<li>Suportes <b>abertos pelo CS Prop</b>: Suporte Franquia, Danos, Taxa de limpeza, Manutenções, Resposta a Avaliação, Realocação e Cancelamento e Suporte Atendimento.</li>
+<li>Suportes <b>abertos para o CS Prop</b>: Insatisfação com operação do imóvel, Manutenção e Adequação do Imóvel, enxoval do proprietário, Aviso de Migração de franquia e Handovers de CS com problema de danos ou atendimento.</li>
+<li>O card é lido inteiro, com os comentários. O campo "Quer abrir ocorrência?" do formulário é ignorado, porque quase sempre vem marcado como "Não".</li>
+<li>Esses suportes são os mesmos espelhados no #suporte-operação, por isso o canal não precisa ser varrido à parte.</li>
+</ul>
+<p><b>2. Slack #respostas-reclame-aqui</b></p>
+<ul>
+<li>Reclamações de hóspede ou proprietário que apontam falha da franquia.</li>
+</ul>
+<p><b>Fica de fora:</b> precificação, contrato, cobrança, dados bancários, Wallet, troca de proprietário, Anúncios, Investimentos e Implantação (Implantação tem análise própria no Sapron).</p>
+<h3>:arrows_counterclockwise: Como funciona</h3>
+<p><b>1 — Leitura (nada é aberto nesta fase)</b></p>
+<ul>
+<li>Coleta os suportes e mensagens da janela e separa o que tem cara de falha da franquia.</li>
+<li><b>Cruza antes de sugerir:</b> ocorrências do imóvel na Central nos últimos 120 dias (qualquer etapa, inclusive Excluídos) e chamados do imóvel na Central de Atividades do Sapron. Mesmo fato já registrado não volta.</li>
+<li>Confere a franquia do imóvel no Sapron e se ela existe na Central.</li>
+</ul>
+<p><b>2 — Classificação</b></p>
+<ul>
+<li>Subcategoria pela régua v2. O que é da Seazone, do proprietário ou externo (condomínio, obra, chuva) não vira ocorrência. Na dúvida, não vira.</li>
+<li>Força de cada caso:</li>
+<ul>
+<li><b>Forte:</b> fato concreto, falha atribuível à franquia, e a resposta dela não derruba.</li>
+<li><b>Dúvida:</b> a franquia contestou com algo plausível, ainda não respondeu ou a responsabilidade é dividida.</li>
+<li><b>Não abrir:</b> a franquia comprovou, é do proprietário ou da Seazone, ou já existe card.</li>
+</ul>
+</ul>
+<p><b>3 — Aprovação e abertura</b></p>
+<ul>
+<li>A analista revisa a lista (fortes, dúvidas e não abrir, com o motivo de cada um) e aprova o que deve abrir.</li>
+<li>Só então os cards são criados na coluna <b>Nova Ocorrência</b> da Central, com origem <b>Caça Ocorrências</b>, a subcategoria, o fato com datas e o link da fonte como evidência. A partir daí seguem o Processo de Ocorrências normal.</li>
+</ul>
+<h3>:busts_in_silhouette: Responsável</h3>
+<p>Qualidade e Fiscalização — <b>@Victoria Magri</b></p>
+<p>Página atualizada por <b>@Victoria Magri</b> em 29/10/2026</p></div>
+  </details>
+</section>
+<section>
+  <div class="head"><h2>4. Processo de Elogio Mensal de Franquias</h2><span class="tag">Reescrita completa</span></div>
+  <p class="links"><a href="https://seazone-fund.slack.com/docs/TDLTVAWQ6/F086AGC6Y4B" target="_blank">Abrir canvas no Slack</a></p>
+  <div class="scroll"><table><thead><tr><th>Antes</th><th>Depois</th></tr></thead><tbody><tr><td>Passos incompletos (&quot;Acessar a página da lovable...&quot;, &quot;Baixar a planilha...&quot;)</td><td>Passos da aba Elogios: avaliar, marcar válido (concluído) ou inválido (excluído com justificativa)</td></tr><tr><td>&quot;Mensal&quot; e &quot;a cada 15 dias&quot; ao mesmo tempo</td><td>A cada 15 dias</td></tr><tr><td>Encaminhamento ao &quot;setor responsável&quot;</td><td>Elogios válidos baixados e enviados para a Rosi publicar</td></tr></tbody></table></div>
+  <details><summary>Texto novo para colar</summary>
+    <p class="how">Substituir todo o conteúdo abaixo do título.</p>
+    <button onclick="cp('c3')">Copiar texto</button>
+    <div class="c" id="c3"><h3>Visão Geral</h3>
+<p>Este canvas documenta o processo de reconhecimento de franquias, feito <b>a cada 15 dias</b>. Os elogios recebidos das equipes da Seazone e do Cliente Oculto ficam na aba <b>Elogios</b> da Central de Qualidade; os válidos são baixados e enviados para a Rosi, que cuida da publicação.</p>
+<hr>
+<h4>Links Principais</h4>
+<ul>
+<li>Central de Qualidade — Elogios: <a href="https://centraldeocorrenciasemultas.lovable.app/adm/elogios" target="_blank">https://centraldeocorrenciasemultas.lovable.app/adm/elogios</a></li>
+<li>Portal 360 — Destaques: <a href="https://franqueado360.seazone.com.br/admin/destaques" target="_blank">https://franqueado360.seazone.com.br/admin/destaques</a></li>
+</ul>
+<hr>
+<h4>Quando Realizar</h4>
+<p>A cada 15 dias.</p>
+<hr>
+<h4>Passo a Passo</h4>
+<h5>Etapa 1 — Avaliação dos elogios recebidos</h5>
+<ul>
+<li>Acessar a aba <b>Elogios</b> da Central de Qualidade.</li>
+<li>Ler os elogios novos (registro manual ou vindos do Cliente Oculto) e decidir:</li>
+<ul>
+<li><b>Válido</b> → marcar como concluído.</li>
+<li><b>Inválido</b> → excluir, com justificativa.</li>
+</ul>
+</ul>
+<h5>Etapa 2 — Baixar os elogios válidos</h5>
+<ul>
+<li>Baixar os elogios válidos do período.</li>
+<li>Conferir franquia, imóvel e motivo de cada um.</li>
+</ul>
+<h5>Etapa 3 — Encaminhamento</h5>
+<ul>
+<li>Enviar os elogios baixados para a Rosi, que faz a publicação.</li>
+<li><b>Destaques</b> (Portal 360): franqueado360.seazone.com.br/admin/destaques → <b>Novo Destaque</b> → franquia, mês de referência e motivo → salvar.</li>
+<li><b>Evolução</b> (Portal 360): franqueado360.seazone.com.br/admin/evolucao → <b>Nova Evolução</b> → franquia, mês de referência e descrição da melhora → salvar.</li>
+</ul>
+<hr>
+<h4>Responsável</h4>
+<p>Qualidade e Fiscalização — <b>@Victoria Magri</b></p></div>
+  </details>
+</section>
+<section>
+  <div class="head"><h2>5. Hub — Qualidade e fiscalização</h2><span class="tag">Acréscimo</span></div>
+  <p class="links"><a href="https://seazone-fund.slack.com/docs/TDLTVAWQ6/F08627H15ND" target="_blank">Abrir canvas no Slack</a></p>
+  <div class="scroll"><table><thead><tr><th>Antes</th><th>Depois</th></tr></thead><tbody><tr><td>&quot;Materiais de apoio&quot; vazio</td><td>MGO, link da Central de Qualidade e aba Regras (régua v2)</td></tr></tbody></table></div>
+  <details><summary>Texto novo para colar</summary>
+    <p class="how">Colar abaixo do título &quot;Materiais de apoio&quot;.</p>
+    <button onclick="cp('c4')">Copiar texto</button>
+    <div class="c" id="c4"><p>Colar logo abaixo do título <b>Materiais de apoio</b>:</p>
+<ul>
+<li>MGO — Política de Descumprimento e tabela de ocorrências</li>
+<li>Central de Qualidade (Ocorrências e Multas): <a href="https://centraldeocorrenciasemultas.lovable.app/adm/funil-ocorrencias" target="_blank">https://centraldeocorrenciasemultas.lovable.app/adm/funil-ocorrencias</a></li>
+<li>Régua de ocorrências v2 (aba Regras da Central): <a href="https://centraldeocorrenciasemultas.lovable.app/adm/regras" target="_blank">https://centraldeocorrenciasemultas.lovable.app/adm/regras</a></li>
+</ul></div>
+  </details>
+</section>
+</main>
+<script>function cp(id){const r=document.createRange();r.selectNodeContents(document.getElementById(id));const s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');alert('Copiado')}catch(e){}s.removeAllRanges()}</script>
+</body></html>
